@@ -1,0 +1,19 @@
+<h1>Message Boards</h1>
+
+<h3>Open Boards</h3>
+
+<% if @boards.any? %>
+  <ul>
+    <% @boards.each do |board| %>
+      <li><%= board.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no boards available</p>
+<% end %>
+
+<a href="/boards/new">Start a board</a>
+
+<% @boards.each do |board| %>
+  <li><a href="/boards/<%= board.id%>"><%= board.name %></a></li>
+<% end %>
